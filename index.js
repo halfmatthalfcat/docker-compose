@@ -109,14 +109,15 @@ const down = function (options) {
 };
 
 /**
+ * @param {string[]} services
  * @param {object} options
  * @param {string} options.cwd
  * @param {boolean} [options.log]
  * @param {?(string|string[])} [options.config]
  * @param {?object} [options.env]
  */
-const stop = function (options) {
-  return execCompose('stop', [], options);
+const stop = function (services, options) {
+  return execCompose('stop', services, options);
 };
 
 /**
