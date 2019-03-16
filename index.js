@@ -142,6 +142,7 @@ const down = function (options) {
 };
 
 /**
+ * @param {string[]} services
  * @param {object} options
  * @param {string} options.cwd
  * @param {boolean} [options.log]
@@ -149,8 +150,8 @@ const down = function (options) {
  * @param {?object} [options.env]
  * @param {?(string[]|Array<string|string[]>)} [options.composeOptions]
  */
-const stop = function (options) {
-  return execCompose('stop', [], options);
+const stop = function (services, options) {
+  return execCompose('stop', services, options);
 };
 
 /**
