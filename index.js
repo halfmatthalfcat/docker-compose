@@ -332,6 +332,8 @@ const ps = function (options) {
 
 /**
  * Push command
+ * Pass an empty array to services to build all services
+ * @param {Array<string>} services
  * @param {object} options
  * @param {string} options.cwd
  * @param {boolean} [options.log]
@@ -340,11 +342,11 @@ const ps = function (options) {
  * @param {?object} [options.env]
  * @param {?(string[]|Array<string|string[]>)} [options.composeOptions]
  */
-const push = function (options) {
+const push = function (services, options) {
   return execCompose(
     'push',
-    options.ignorePushFailures ? [ '--ignore-push-failures' ] : [],
-    options
+    options.ignorePushFailures ? [ ...services, '--ignore-push-failures' ] : [ ...services ],
+    options,
   );
 };
 

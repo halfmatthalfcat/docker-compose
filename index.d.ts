@@ -38,7 +38,7 @@ export declare function configVolumes(options: IDockerComposeOptions): Promise<I
 
 export declare function ps(options: IDockerComposeOptions): Promise<IDockerComposeResult>;
 
-export declare function push(options: IDockerComposePushOptions): Promise<IDockerComposeResult>;
+export declare function push(services: Array<string>, options: IDockerComposePushOptions): Promise<IDockerComposeResult>;
 
 export declare function port(service: String, containerPort: String | Number, options: IDockerComposeOptions): Promise<IDockerComposeResult>;
 
