@@ -345,7 +345,7 @@ const ps = function (options) {
 const push = function (services, options) {
   return execCompose(
     'push',
-    options.ignorePushFailures ? [ ...services, '--ignore-push-failures' ] : [ ...services ],
+    services,
     options,
   );
 };
